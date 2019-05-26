@@ -14,5 +14,7 @@ import java.util.List;
 public interface OrderDao {
     List<Order> getOrderListByUserId(Integer userId);
 
+    List<Order> getOrderList();
+
     void createOrder(Order order);
 }

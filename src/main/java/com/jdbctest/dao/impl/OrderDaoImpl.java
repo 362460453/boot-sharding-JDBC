@@ -35,6 +35,14 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
+    public List<Order> getOrderList() {
+        String sql = "select order_id, user_id from t_order ";
+
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Order>(
+                Order.class));
+    }
+
+    @Override
     public void createOrder(Order order) {
         StringBuffer sb = new StringBuffer();
         sb.append("insert into t_order(user_id, order_id)");

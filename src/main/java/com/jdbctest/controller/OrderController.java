@@ -35,4 +35,10 @@ public class OrderController {
     public List<Order> getOrderListByUserId(@PathVariable("userId") Integer userId) {
         return orderDao.getOrderListByUserId(userId);
     }
+
+    @RequestMapping(path = "/", method = {RequestMethod.GET})
+    public List<Order> getOrderListByUserId() {
+        return orderDao.getOrderList();
+    }
 }
+
